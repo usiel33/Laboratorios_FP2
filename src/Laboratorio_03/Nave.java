@@ -1,7 +1,7 @@
-
 package Laboratorio_03;
 
-
+//Laboratorio N° 3- Ejercicio 1
+//Autor: Usiel Suriel Quispe Puma
 public class Nave {
 
     private String nombre;
@@ -51,12 +51,12 @@ public class Nave {
     public int getPuntos() {
         return puntos;
     }
-    public void mostrarDatos(){
-        System.out.println("Nombre : "+nombre);
-        System.out.println("fila: "+fila+"     Columna : "+columna);
-        System.out.println("puntos : "+puntos);
-        System.out.println("Estado : "+estado);
+
+    public void mostrarDatos() {
+        System.out.println("Nombre : " + nombre);
+        System.out.println("fila: " + fila + "     Columna : " + columna);
+        System.out.println("puntos : " + puntos);
+        System.out.println("Estado : " + estado);
     }
-// Completar con otros métodos necesarios
 
 }

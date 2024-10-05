@@ -1,4 +1,6 @@
 package Laboratorio_03;
+//Laboratorio N° 3- Ejercicio 2
+//Autor: Usiel Suriel Quispe Puma
 
 import java.util.*;
 

@@ -1,12 +1,14 @@
 package Laboratorio_03;
+//Laboratorio N° 3- Ejercicio 1
+//Autor: Usiel Suriel Quispe Puma
 
 import java.util.*;
 
 public class DemoBatalla {
 
     public static void main(String[] args) {
-        Nave[] misNaves = new Nave[3];//cabie de 10
-        Nave[] navesRandom= new Nave[10];
+        Nave[] misNaves = new Nave[4];
+        Nave[] navesRandom = new Nave[10];
         Scanner sc = new Scanner(System.in);
         String nomb, col;
         int fil, punt = 0;
@@ -16,16 +18,16 @@ public class DemoBatalla {
             System.out.println("\nNave " + (i + 1));
             System.out.print("Nombre: ");
             nomb = sc.next();
-            System.out.print("Fila : ");
+            System.out.print("Fila (1-10): ");
             fil = sc.nextInt();
-            System.out.print("Columna: ");
+            System.out.print("Columna (A-J): ");
             col = sc.next().toUpperCase();
-            System.out.print("Estado: ");
+            System.out.print("Estado(true - false) : ");
             est = sc.nextBoolean();
             System.out.print("Puntos: ");
             punt = sc.nextInt();
-
-            misNaves[i] = new Nave(); //Se crea un objeto Nave y se asigna su referencia a misNaves
+            //creamos obejto nave e ingresamos los valores 
+            misNaves[i] = new Nave();
 
             misNaves[i].setNombre(nomb);
             misNaves[i].setFila(fil);
@@ -57,7 +59,8 @@ public class DemoBatalla {
         //hacemos que se muestre los naves pero en orden desordenado por el cual
         System.out.println("-----------------------------\n");
         System.out.println("\tORDEN DE NAVES MODIFICADO");
-        navesRandom=desordenarNaves(misNaves);//is devuelve otro arreglo, lo asignamos a otro arreglo 
+        navesRandom = desordenarNaves(misNaves);//Nos devuelve otro arreglo, lo asignamos 
+                                                //a otro arreglo 
         mostrarNaves(navesRandom); //Mostramos el nuevo arreglo
     }
 //Método para mostrar todas las naves
@@ -73,7 +76,7 @@ public class DemoBatalla {
     }
 
 //Método para mostrar todas las naves de un nombre que se pide por teclado
-    public static void mostrarPorNombre(Nave[] flota, String nombre) {//se agregp el parametr nombre, listo
+    public static void mostrarPorNombre(Nave[] flota, String nombre) {
         for (int i = 0; i < flota.length; i++) {
             if (flota[i] != null && flota[i].getNombre().equals(nombre)) {
 
@@ -87,7 +90,7 @@ public class DemoBatalla {
 
 //Método para mostrar todas las naves con un número de puntos inferior o igual
 //al número de puntos que se pide por teclado
-    public static void mostrarPorPuntos(Nave[] flota, int puntos) {//se agrego el parametro puntos,hecho
+    public static void mostrarPorPuntos(Nave[] flota, int puntos) {
         for (int i = 0; i < flota.length; i++) {
             if (flota[i].getPuntos() <= puntos) {
                 flota[i].mostrarDatos();
@@ -99,7 +102,7 @@ public class DemoBatalla {
     }
 
 //Método que devuelve la Nave con mayor número de Puntos
-    public static void mostrarMayorPuntos(Nave[] flota) {//se cambio el tipo de valr de retorno por void, era nave
+    public static void mostrarMayorPuntos(Nave[] flota) {
         int mayorPuntos = 0;
         int nave = 0;
         for (int i = 0; i < flota.length; i++) {
@@ -114,23 +117,26 @@ public class DemoBatalla {
 
     }
 
-//Crear un método que devuelva un nuevo arreglo de objetos con todos los objetos previamente ingresados
-//pero aleatoriamente desordenados
+//Crear un método que devuelva un nuevo arreglo de objetos con todos los objetos
+//previamente ingresados pero aleatoriamente desordenados
     public static Nave[] desordenarNaves(Nave[] flota) {
-    Random random = new Random();
-    Nave[] flotaRandom = flota.clone(); // Clona el arreglo original
+        Random random = new Random();
+        Nave[] flotaRandom = new Nave[flota.length];
 
-    // Aplicar el algoritmo de Fisher-Yates para barajar
-    for (int i = flotaRandom.length - 1; i > 0; i--) {
-        int posAleatoria = random.nextInt(i + 1); // Genera un índice aleatorio entre 0 e i
-        // Intercambia flotaRandom[i] con el elemento en posAleatoria
-        Nave temp = flotaRandom[i];
-        flotaRandom[i] = flotaRandom[posAleatoria];
-        flotaRandom[posAleatoria] = temp;
+        //compiamos lo elementos del arreglo orgininal a otro arreglo
+        for (int i = 0; i < flota.length; i++) {
+            flotaRandom[i] = flota[i];
+        }
+
+        //Aplicamos el  algoritmo de Fisher-Yates para desordenar el arreglo
+        for (int i = flotaRandom.length - 1; i > 0; i--) {
+            int posAleatoria = random.nextInt(i + 1);
+            Nave temp = flotaRandom[i];
+            flotaRandom[i] = flotaRandom[posAleatoria];
+            flotaRandom[posAleatoria] = temp;
+        }
+
+        return flotaRandom;
     }
-
-    return flotaRandom; // Devuelve el arreglo desordenado
-}
-
 
 }

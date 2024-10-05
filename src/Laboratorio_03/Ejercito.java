@@ -1,6 +1,9 @@
 package Laboratorio_03;
+//Laboratorio N° 3- Ejercicio 3
+//Autor: Usiel Suriel Quispe Puma
 
 public class Ejercito {
+
     //Arreglo de objeto de la clase Soldado_2
     Soldado_2[] soldados;
 
@@ -11,9 +14,11 @@ public class Ejercito {
 
     //metodo para generar nombres de los doldados
     public void generarNombres() {
+        int id;
         for (int i = 0; i < soldados.length; i++) {
+            id=(int)(Math.random()*100);
             String nombre;
-            nombre = "Soldado" + i;
+            nombre = "Soldado" + id;
             soldados[i] = new Soldado_2(nombre);
 
         }

@@ -1,12 +1,7 @@
 package Laboratorio_03;
+//Laboratorio N° 3- Ejercicio 3
+//Autor: Usiel Suriel Quispe Puma
 
-/*Actividad 5: escribir un programa donde se creen 2 ejércitos, cada uno con un número aleatorio de soldados entre
-1 y 5, considerando sólo su nombre. Sus datos se inicializan automáticamente con nombres tales como “Soldado0”,
-“Soldado1”, etc. Luego de crear los 2 ejércitos se deben mostrar los datos de todos los soldados de ambos ejércitos
-e indicar qué ejército fue el ganador.
-Restricción: aplicar arreglos estándar y métodos para inicializar los ejércitos, mostrar ejército y mostrar ejército
-ganador. La métrica a aplicar para indicar el ganador es el mayor número de soldados de cada ejército, puede
-haber empates. (Todavía no aplicar arreglo de objetos)*/
 import java.util.*;
 
 public class EJERCICIO_3 {
@@ -31,11 +26,11 @@ public class EJERCICIO_3 {
         //Mostramos datos de todos los soldado de cada ejercito
         System.out.println("\nDATOS DE LOS SOLDADOS DEL EJERCITO 1\n");
         e1.mostrarDatos();
-         System.out.println("\nDATOS DE LOS SOLDADOS DEL EJERCITO 2\n");
+        System.out.println("\nDATOS DE LOS SOLDADOS DEL EJERCITO 2\n");
         e2.mostrarDatos();
 
         //mostramos al ganador
-        System.out.println("\n------------------------");
+        System.out.println("\n--------------------------------");
         mostrarGanador(cantSoldados1, cantSoldados2);
     }
 
@@ -43,11 +38,13 @@ public class EJERCICIO_3 {
     //ejercito
     public static void mostrarGanador(int cant1, int cant2) {
         if (cant1 > cant2) {
-            System.out.println("GANADOR : EJERCITO 1");
+            System.out.println("GANADOR : EJERCITO 1   \nCantidad de soldados : "+cant1);
+          
         } else if (cant2 > cant1) {
-            System.out.println("GANADOR : EJERCITO 2");
+            System.out.println("GANADOR : EJERCITO 2   \nCantidad de soldados : " + cant2);
         } else {
             System.out.println("EMPATE !!");
+            System.out.println("EJERCITO 1 : "+cant1+"    EJERCITO 2 : "+cant2);
         }
 
     }

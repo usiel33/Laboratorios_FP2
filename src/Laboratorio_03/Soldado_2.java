@@ -1,4 +1,6 @@
 package Laboratorio_03;
+//Laboratorio N° 3- Ejercicio 3
+//Autor: Usiel Suriel Quispe Puma
 
 public class Soldado_2 {
 
@@ -11,8 +13,7 @@ public class Soldado_2 {
 
     @Override
     public String toString() {
-        System.out.println("Nombre : " + nombre);
-        return nombre;
+        return "Nombre : " + nombre;
     }
 
 }
