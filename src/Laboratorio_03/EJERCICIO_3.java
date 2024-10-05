@@ -34,7 +34,7 @@ public class EJERCICIO_3 {
         mostrarGanador(cantSoldados1, cantSoldados2);
     }
 
-    //metodo para designar al ganador considerando la cantidad de soldados
+    //Método para designar al ganador considerando la cantidad de soldados
     //ejercito
     public static void mostrarGanador(int cant1, int cant2) {
         if (cant1 > cant2) {
@@ -46,7 +46,5 @@ public class EJERCICIO_3 {
             System.out.println("EMPATE !!");
             System.out.println("EJERCITO 1 : "+cant1+"    EJERCITO 2 : "+cant2);
         }
-
     }
-
 }
